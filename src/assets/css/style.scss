@@ -1,0 +1,33 @@
+.ant-layout-header {
+    background-color: white !important;
+    text-transform: uppercase !important;
+    font-weight: 500 !important;
+}
+
+.header {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.ant-menu-horizontal {
+    width: 100% !important;
+}
+
+.ant-menu-overflow {
+    justify-content: flex-end;
+}
+
+.inputNav {
+    height: 40px !important;
+    width: 200px !important;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carouselBlock {
+    height: 500px;
+}

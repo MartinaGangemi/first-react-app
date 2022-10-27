@@ -1,36 +1,50 @@
-import Nav from './Nav';
-const navElements = [
+import React from 'react';
+import {Menu, Input} from 'antd';
+import logo from '../assets/img/react.svg';
+import {SearchOutlined} from '@ant-design/icons';
+
+const navLink = [
     {
-        id: 1,
-        linkName: 'link1',
+        linkName: 'Home',
         href: '#',
     },
     {
-        id: 2,
-        linkName: 'link2',
+        linkName: 'nav2',
         href: '#',
     },
     {
-        id: 3,
-        linkName: 'link3',
-        href: '#',
-    },
-    {
-        id: 4,
-        linkName: 'link4',
+        linkName: 'nav3',
         href: '#',
     },
 ];
-const Header = (props) => {
+const AppHeader = () => {
     return (
-        <nav>
-            {navElements.map((link) => (
-                <Nav key={link.id} {...link} />
-            ))}
+        <div className="container-fluid">
+            <div className="header">
+                <div className="logo">
+                    <img src={logo} alt="" />
+                </div>
 
-            <h1>{props.saluta}</h1>
-            <div>ciao</div>
-        </nav>
+                <Menu
+                    className="nav"
+                    mode="horizontal"
+                    defaultSelectedKeys={['1']}
+                    items={navLink.map((link, i) => {
+                        const key = i + 1;
+                        return {
+                            key,
+                            label: <a href={link.href}>{link.linkName}</a>,
+                        };
+                    })}
+                />
+                <Input
+                    className="inputNav"
+                    placeholder="Search"
+                    prefix={<SearchOutlined />}
+                />
+            </div>
+        </div>
     );
 };
-export default Header;
+
+export default AppHeader;
