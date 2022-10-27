@@ -1,3 +1,8 @@
+.container-fluid {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 .ant-layout-header {
     background-color: white !important;
     text-transform: uppercase !important;
@@ -30,4 +35,26 @@ img {
 
 .carouselBlock {
     height: 500px;
+}
+
+.aboutHolder,
+.cardContainer {
+    text-align: center;
+}
+
+.row-about {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.aboutIcons > svg {
+    height: 40px !important;
+    width: 40px !important;
+    color: cornflowerblue;
+}
+
+.title {
+    display: inline-block;
+    line-height: 3rem;
+    box-shadow: 0 25px 0 -23px cornflowerblue;
 }

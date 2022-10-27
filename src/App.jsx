@@ -1,20 +1,37 @@
 import {useState} from 'react';
-import './App.css';
+
 import './assets/css/style.scss';
+import './assets/css/utilities.scss';
 import AppHeader from './components/Header';
-import Hero from './components/Home/Hero';
+import HomePage from './components/Pages/HomePage';
+import ContactPage from './components/Pages/ContactPage';
+import ErrorPage from './components/Pages/ErrorPage';
+import FooterComponent from './components/FooterComponent';
 import 'antd/dist/antd.css';
 import {Layout} from 'antd';
-const {Header, Content} = Layout;
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+
+const {Header, Footer} = Layout;
 function App() {
     return (
         <Layout className="mainLayout">
-            <Header>
-                <AppHeader />
-            </Header>
-            <Content>
-                <Hero />
-            </Content>
+            <Router>
+                <Header>
+                    <AppHeader />
+                </Header>
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/contact" element={<ContactPage />} />
+                    <Route path="*" element={<ErrorPage />} />
+                </Routes>
+            </Router>
+
+            <Footer
+                style={{
+                    textAlign: 'center',
+                }}>
+                <FooterComponent />
+            </Footer>
         </Layout>
     );
 }

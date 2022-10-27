@@ -6,22 +6,18 @@ import carousel3 from '../../assets/img/carousel3.jpg';
 
 const arrCarousel = [carousel1, carousel2, carousel3];
 
-const Hero = () => {
+const CarouselComponent = () => {
     return (
         <Carousel autoplay>
             {arrCarousel.map((singleImg, index) => {
-                const key = index + 1;
                 return (
-                    key,
-                    (
-                        <div className="carouselBlock">
-                            <img src={singleImg} alt="" />
-                        </div>
-                    )
+                    <div key={index} className="carouselBlock">
+                        <img src={singleImg} alt="" />
+                    </div>
                 );
             })}
         </Carousel>
     );
 };
 
-export default Hero;
+export default CarouselComponent;
