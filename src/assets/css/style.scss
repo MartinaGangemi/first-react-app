@@ -38,7 +38,8 @@ img {
 }
 
 .aboutHolder,
-.cardContainer {
+.cardContainer,
+.contact-section {
     text-align: center;
 }
 
@@ -57,4 +58,8 @@ img {
     display: inline-block;
     line-height: 3rem;
     box-shadow: 0 25px 0 -23px cornflowerblue;
+}
+
+.ant-row {
+    align-items: center !important;
 }
